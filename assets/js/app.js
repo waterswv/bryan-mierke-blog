@@ -23,8 +23,18 @@ $(document).ready( function(){
     sidePostContent: "In a linked list, a node has a pointer to the next node. So, what would that look like in JS? We explore in this post..."
   }];
 
+  let fact = {
+    dailyFactTitle: `>Meet Google Home Max - Google's latest response to Amazon Alexa ...
+    a constant battle in the tech-iverse to capture every ounce of human
+    data by eavesdropping on all of our conversations. I hear... it has
+    pretty great speakers too.`,
+    dailyFactURL: 'https://waterswv.github.io'
+
+  }
+
   // Grab each Post object and iterate to publish to the page.
   posts.forEach( post => {$('#sidebar > #sideposts > .divided').append(sidePostTemplate(post));});
+  $('.divided > li > .dailyfact').append(dailyFactTemplate(fact));
 
 
   // Function to generate template HTML for each smaller sidePost.
@@ -47,6 +57,31 @@ $(document).ready( function(){
     return postHTML;
   }
 
+  function dailyFactTemplate(fact){
+    let postHTML =
+    `
+      <header>
+        <h3><a href="#">Today in Facts</a></h3>
+      </header>
+      <a href="#" class="image left"><img src="images/pic06.jpg" alt="" /></a>
+      <p>${fact.dailyFactTitle}</p>
+      <ul class="actions">
+        <li><a href="${fact.dailyFactURL}" class="button icon fa-file">Learn More</a></li>
+      </ul>
+
+    `
+    return postHTML;
+  }
+
+  function dailyWordTemplate(word){
+
+
+  }
+
+  function mainPostTemplate(post){
+
+
+  }
 
 
 

@@ -32,9 +32,14 @@ $(document).ready( function(){
 
   }
 
+  let word = {
+    dailyWord: 'Divest',
+    dailyWordURL: 'https://www.merriam-webster.com/dictionary/divest'
+  }
   // Grab each Post object and iterate to publish to the page.
   posts.forEach( post => {$('#sidebar > #sideposts > .divided').append(sidePostTemplate(post));});
   $('.divided > li > .dailyfact').append(dailyFactTemplate(fact));
+  $('.divided > li > .dailyword').append(dailyWordTemplate(word));
 
 
   // Function to generate template HTML for each smaller sidePost.
@@ -58,7 +63,7 @@ $(document).ready( function(){
   }
 
   function dailyFactTemplate(fact){
-    let postHTML =
+    let factHTML =
     `
       <header>
         <h3><a href="#">Today in Facts</a></h3>
@@ -70,12 +75,23 @@ $(document).ready( function(){
       </ul>
 
     `
-    return postHTML;
+    return factHTML;
   }
 
   function dailyWordTemplate(word){
+    let wordHTML =
+    `
+      <header>
+        <h3><a href="#">Word of the Day!</a></h3>
+      </header>
+      <a href="#" class="image left"><img src="images/pic07.jpg" alt="" /></a>
+      <p>Today's word of the day is <strong>${word.dailyWord}</strong></p>
+      <ul class="actions">
+        <li><a href="${word.dailyWordURL}" class="button icon fa-file" target='_blank'>Define It</a></li>
+      </ul>
 
-
+    `
+    return wordHTML;
   }
 
   function mainPostTemplate(post){

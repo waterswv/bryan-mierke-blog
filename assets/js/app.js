@@ -36,6 +36,13 @@ $(document).ready( function(){
     dailyWord: 'Divest',
     dailyWordURL: 'https://www.merriam-webster.com/dictionary/divest'
   }
+
+  let mainPost = {
+    mainPostTitle: '',
+    mainPostContent: `
+
+    `
+  }
   // Grab each Post object and iterate to publish to the page.
   posts.forEach( post => {$('#sidebar > #sideposts > .divided').append(sidePostTemplate(post));});
   $('.divided > li > .dailyfact').append(dailyFactTemplate(fact));

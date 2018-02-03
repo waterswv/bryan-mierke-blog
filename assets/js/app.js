@@ -5,21 +5,21 @@ $(document).ready( function(){
   // This is TEST Data for the Template.
   let posts =
   [{
-    sidePostDate: 'Jan 30',
-    sidePostURL: '#',
-    sidePostTitle: 'Understanding Primitives',
+    postDate: 'Jan 30',
+    postURL: '#',
+    postTitle: 'Understanding Primitives',
     sidePostContent: "A primitive (primitive value, primitive data type) is data that is not an object and has no methods. In JavaScript, there are 6 primitive data types..."
   },
   {
-    sidePostDate: 'Jan 2',
-    sidePostURL: 'http://exploringjs.com/es6/ch_destructuring.html',
-    sidePostTitle: 'Destructuring',
+    postDate: 'Jan 2',
+    postURL: 'http://exploringjs.com/es6/ch_destructuring.html',
+    postTitle: 'Destructuring',
     sidePostContent: "Destructuring is a convenient way of extracting multiple values from data stored in (possibly nested) objects and Arrays. It can be used..."
   },
   {
-    sidePostDate: 'Dec 3',
-    sidePostURL: 'https://medium.com/@deniswells59/singly-linked-lists-with-javascript-81859a5a5095"',
-    sidePostTitle: 'Singly Linked List',
+    postDate: 'Dec 3',
+    postURL: 'https://medium.com/@deniswells59/singly-linked-lists-with-javascript-81859a5a5095"',
+    postTitle: 'Singly Linked List',
     sidePostContent: "In a linked list, a node has a pointer to the next node. So, what would that look like in JS? We explore in this post..."
   }];
 
@@ -38,9 +38,9 @@ $(document).ready( function(){
   }
 
   let mainPost = {
-    mainPostTitle: `<h2>A bootcamp grad's take on learning to code <br/>
+    postTitle: `<h2>A bootcamp grad's take on learning to code <br/>
     and how it could be a little smoother.</h2>`,
-    mainPostContent: `
+    postContent: `
 
     <span class="image featured"><img src="images/pic04.jpg" alt="" /></span>
     <h3>A case for why</h3>
@@ -121,8 +121,8 @@ $(document).ready( function(){
       <!-- Excerpt -->
         <article class="box excerpt">
           <header>
-            <span class="date">${post.sidePostDate}</span>
-            <h3><a href="${post.sidePostURL}" target='_blank'>${post.sidePostTitle}</a></h3>
+            <span class="date">${post.postDate}</span>
+            <h3><a href="${post.postURL}" target='_blank'>${post.postTitle}</a></h3>
           </header>
           <p>${post.sidePostContent}
           </p>
@@ -168,8 +168,8 @@ $(document).ready( function(){
     let postHTML =
 
     `
-      <header>${post.mainPostTitle}</header>
-      ${post.mainPostContent}
+      <header>${post.postTitle}</header>
+      ${post.postContent}
     `
     return postHTML;
   }
